@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package co.edu.uniandes.csw.mueblesdelosalpes.servicios;
 
@@ -25,18 +21,10 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class CatalogoService {
  
-    /**
-     * Referencia al Ejb del catalogo encargada de realizar las operaciones del mismo.
-     */
+    
     @EJB
     private IServicioCatalogoMockLocal catalogoEjb;
    
- 
-    /**
-     * Servicio que ofrece una lista JSON con el catálogo de Muebles de los alpes (Los muebles disponibles para la venta).
-     * @return la lista JSON con los muebles de MDLA.
-  
-     */
     @GET
     @Path("muebles/")
     public List<Mueble> getTodosLosMuebles() {
@@ -45,3 +33,4 @@ public class CatalogoService {
     }
  
 }
+
