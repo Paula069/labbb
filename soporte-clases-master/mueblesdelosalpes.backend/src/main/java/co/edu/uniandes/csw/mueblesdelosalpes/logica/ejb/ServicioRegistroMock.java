@@ -1,14 +1,3 @@
-/**
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * $Id$ ServicioRegistroMock.java
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación
- * Licenciado bajo el esquema Academic Free License version 3.0
- *
- * Ejercicio: Muebles de los Alpes
- * Autor: Juan Sebastián Urrego
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
 
 package co.edu.uniandes.csw.mueblesdelosalpes.logica.ejb;
 
@@ -22,41 +11,18 @@ import co.edu.uniandes.csw.mueblesdelosalpes.logica.interfaces.IServicioRegistro
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Implementación de los servicios de registro de un cliente en el sistema
- * @author Juan Sebastián Urrego
- */
+
 public class ServicioRegistroMock implements IServicioRegistroMockRemote, IServicioRegistroMockLocal
 {
-    //-----------------------------------------------------------
-    // Atributos
-    //-----------------------------------------------------------
     
-    /**
-     * Interface con referencia al servicio de persistencia en el sistema
-     */
     private IServicioPersistenciaMockLocal persistencia;
 
-    //-----------------------------------------------------------
-    // Constructor
-    //-----------------------------------------------------------
-
-    /**
-     * Constructor de la clase sin argumentos
-     */
+  
      public ServicioRegistroMock()
      {
         persistencia=new ServicioPersistenciaMock();
      }
 
-    //-----------------------------------------------------------
-    // Métodos
-    //-----------------------------------------------------------
-
-    /**
-     * Verifica y registra un usuario en el sistema
-     * @param u Usuario a persistir
-     */
     @Override
     public void registrar(Usuario u)throws OperacionInvalidaException
     {
@@ -78,11 +44,6 @@ public class ServicioRegistroMock implements IServicioRegistroMockRemote, IServi
         }
     }
 
-    /**
-     * Elimina un cliente del sistema dado su login
-     * @param login Login del cliente
-     * @throws OperacionInvalidaException Excepción que es lanzada en caso de ocurrir un error
-     */
     @Override
     public void eliminarCliente(String login) throws OperacionInvalidaException
     {
@@ -97,10 +58,6 @@ public class ServicioRegistroMock implements IServicioRegistroMockRemote, IServi
         }
     }
 
-    /**
-     * Devuelve los clientes del sistema
-     * @return clientes Lista con todos los clientes del sistema
-     */
     @Override
     public List<Usuario> darClientes()
     {
